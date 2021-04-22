@@ -3,10 +3,9 @@ primeNumbers = [2];
 function isNumberPrime(n) {
     var i = 0;
     while (i < primeNumbers.length && n >= primeNumbers[i] ** 2) {          // вот требуемый в задании цикл while :)
-        if (n % primeNumbers[i] === 0) return 0;
-        i++;
+        if (n % primeNumbers[i++] === 0) return false;
     }
-    return 1;
+    return true;
 }
 
 for (var i = 3; i < 100; i++) {                               // тут тоже можно было бы while вставить, но, мне кажется, for лучше подходит
