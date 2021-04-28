@@ -4,8 +4,10 @@ var basket = {
     products: [],
     amount: [],
     addProduct(product, amount) {
-        this.products.push(product);
-        this.amount.push(amount);
+        if (!isNaN(amount) && !isNaN(product.cost)) {
+            this.products.push(product);
+            this.amount.push(amount);
+        }
     },
     countBasketPrice() {
         var finalCost = 0;
