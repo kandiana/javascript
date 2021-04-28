@@ -40,7 +40,7 @@ var b = +prompt('Введите второе целое число:');     // Х
 
 if (isNaN(a) || isNaN(b)) {
     alert('Вы не числа ввели...');
-} else if ((a - Math.round(a) != 0) || (b - Math.round(b) != 0)) {
+} else if ((a - Math.round(a) !== 0) || (b - Math.round(b) !== 0)) {
     alert('Вы не целые числа ввели...');
 } else if (a >= 0 && b >= 0) {
     alert('Поздравляю, Вы ввели целые числа!\na = ' + a + ', b = ' + b + '\nОба числа положительные.\nРазность введенных чисел равна ' + Math.abs(a - b));
@@ -101,6 +101,7 @@ function prod(arg1, arg2) {
 }
 
 function div(arg1, arg2) {
+    if (arg2 === 0) return 'На ноль делить нельзя!';
     return arg1 / arg2;
 }
 
@@ -148,9 +149,9 @@ alert('null === 0: ' + (null === 0) +
 // Task 8
 
 function power(val, pow) {
-    if (pow == 0) {
-        return (val == 0) ? undefined : 1;
-    } else if (val == 0) {
+    if (pow === 0) {
+        return (val === 0) ? undefined : 1;
+    } else if (val === 0) {
         return (pow > 0) ? 0 : 'infinity';
     } else if (pow > 0) {
         return val * power(val, --pow);
@@ -162,7 +163,7 @@ function power(val, pow) {
 alert('Задание 8');
 a = +prompt('Введите число:');
 var n = +prompt('Введите значение степени (любое целое число):');
-if (isNaN(a) || isNaN(n) || (n - Math.round(n) != 0)) {
+if (isNaN(a) || isNaN(n) || (n - Math.round(n) !== 0)) {
     alert('Вы уверены, что ввели то, что требовалось?');
 } else {
     var res = power(a, n);
