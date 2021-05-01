@@ -1,0 +1,108 @@
+/********** GENERAL **********/
+.body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    border-bottom: 5px solid black;
+}
+
+.menu__button {
+    display: block;
+    padding: 10px;
+    background-color: #ccc;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.menu__button:hover {
+    background-color: black;
+    color: white;
+}
+
+.menu__button:not(:last-of-type) {
+    margin-right: 50px;
+}
+
+/********** CHESS BOARD **********/
+
+.board {
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    display: grid;
+    grid-template: repeat(8, auto) / repeat(8, auto);
+}
+
+.tile {
+    width: 50px;
+    height: 50px;
+}
+
+.tile_black {
+    background-color: black;
+}
+
+.tile_white {
+    background-color: white;
+}
+
+.tile_top {
+    border-top: 3px solid black;
+}
+
+.tile_bottom {
+    border-bottom: 3px solid black;
+}
+
+.tile_left {
+    border-left: 3px solid black;
+}
+
+.tile_right {
+    border-right: 3px solid black;
+}
+
+/********** SHOP BASKET **********/
+
+.basket {
+    padding: 40px;
+    text-align: left;
+}
+
+.basket__condition {
+    margin-bottom: 20px;
+}
+
+.basket__header {
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+
+.basket__product-name {
+    display: inline-block;
+    width: 100px;
+    margin-right: 10px;
+}
+
+.basket__product-result {
+    padding-top: 10px;
+}
+
+.basket__product-cost-calculation {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+}
+
+.basket__product-cost {
+    display: inline-block;
+    width: 75px;
+    text-align: right;
+}
