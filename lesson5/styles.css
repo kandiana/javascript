@@ -37,7 +37,23 @@
 
 .wrapper {
     display: grid;
-    grid-template: repeat(8, auto) / repeat(8, auto);
+    grid-template: repeat(10, auto) / repeat(10, auto);
+    border: 3px solid black;
+}
+
+.corner {
+    width: 30px;
+    height: 30px;
+}
+
+.symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.symbol_upside-down {
+    transform: rotate(180deg);
 }
 
 .tile {

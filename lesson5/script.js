@@ -12,21 +12,51 @@ function chessBoard(width, height) {
     boardWrapper.setAttribute('class', 'wrapper');
     board.appendChild(boardWrapper);
 
-    for (var i = 0; i < 8; i++) {
-        for (var j = 0; j < 8; j++) {
-            var tile = document.createElement('div');
-            tile.setAttribute('class', 'tile');
+    var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
-            if ((i + j) % 2 === 0) tile.classList.add('tile_black');
-            else tile.classList.add('tile_white');
+    for (var i = 0; i < 10; i++) {
+        for (var j = 0; j < 10; j++) {
+            if ((i === 0 || i === 9) && (j === 0 || j === 9)) {
+                var corner = document.createElement('div');
+                corner.setAttribute('class', 'corner');
 
-            if (i === 0) tile.classList.add('tile_top');
-            else if (i === 7) tile.classList.add('tile_bottom');
+                boardWrapper.appendChild(corner);
+            }
+            else if ((i === 0 || i === 9)) {
+                var symbol = document.createElement('div');
 
-            if (j === 0) tile.classList.add('tile_left');
-            else if (j === 7) tile.classList.add('tile_right');
+                symbol.setAttribute('class', 'symbol');
+                if (i === 0) symbol.classList.add('symbol_upside-down');
 
-            boardWrapper.appendChild(tile);
+                symbol.innerHTML = letters[8 - j];
+
+                boardWrapper.appendChild(symbol);
+            }
+            else if ((j === 0 || j === 9)) {
+                var symbol = document.createElement('div');
+
+                symbol.setAttribute('class', 'symbol');
+                if (j === 9) symbol.classList.add('symbol_upside-down');
+
+                symbol.innerHTML = i;
+
+                boardWrapper.appendChild(symbol);
+            }
+            else {
+                var tile = document.createElement('div');
+                tile.setAttribute('class', 'tile');
+
+                if ((i + j) % 2 === 0) tile.classList.add('tile_white');
+                else tile.classList.add('tile_black');
+
+                if (i === 1) tile.classList.add('tile_top');
+                else if (i === 8) tile.classList.add('tile_bottom');
+
+                if (j === 1) tile.classList.add('tile_left');
+                else if (j === 8) tile.classList.add('tile_right');
+
+                boardWrapper.appendChild(tile);
+            }
         }
     }
 }
@@ -76,7 +106,8 @@ var basket = {
             else if (numberOfItems > 1 && numberOfItems < 5) itemWord = 'товара общей';
             else itemWord = 'товаров общей';
 
-            if (totalCost % 10 === 1) rubleWord = 'рубль';
+            if (totalCost % 100 > 10 && totalCost % 100 < 15) rubleWord = 'рублей';
+            else if (totalCost % 10 === 1) rubleWord = 'рубль';
             else if (totalCost % 10 > 1 && totalCost % 10 < 5) rubleWord = 'рубля';
             else rubleWord = 'рублей';
 
