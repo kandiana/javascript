@@ -45,6 +45,7 @@
     display: flex;
     height: 100px;
     align-items: center;
+    text-align: center;
 }
 
 .products__title {
@@ -68,17 +69,14 @@
 
 .products__item-name {
     width: 150px;
-    text-align: left;
 }
 
 .products__item-cost {
     width: 200px;
-    text-align: center;
 }
 
 .products__item-availability {
     width: 100px;
-    text-align: center;
 }
 
 /********** SHOP BASKET **********/
