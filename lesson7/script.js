@@ -155,9 +155,9 @@ var basket = {
                 basketLine.innerHTML = '<p>' + '<span class="basket__product-name">' + this.products[i].name + '</span>' +
                     '<span class="basket__product-cost-calculation">' + this.products[i].cost + ' pуб.' + ' \u00d7 ' + this.amount[i] + ' ' + this.products[i].unitName + ' = ' + '</span>' + '<span class="basket__product-cost">' +
                     this.products[i].cost * this.amount[i] + ' pуб.</span></p>' +
-                    `<button class="basket__button ${this.products[i].amount > 0 ? "button" : "button_disabled"}" id="plus_${i}-${this.products[i].id}">+</button>` +
-                    `<button class="basket__button button" id="minus_${i}-${this.products[i].id}">-</button>` +
-                    `<button class="basket__button basket__button-x button" id="delete_${i}-${this.products[i].id}">x</button>`;
+                    `<button type="button" class="basket__button ${this.products[i].amount > 0 ? "button" : "button_disabled"}" id="plus_${i}-${this.products[i].id}">+</button>` +
+                    `<button type="button" class="basket__button button" id="minus_${i}-${this.products[i].id}">-</button>` +
+                    `<button type="button" class="basket__button basket__button-x button" id="delete_${i}-${this.products[i].id}">x</button>`;
                 basketContentsDiv.appendChild(basketLine);
 
                 var basketPlusButton = document.getElementById(`plus_${i}-${this.products[i].id}`);
