@@ -364,7 +364,6 @@ function buyItem(item) {
         if (product.amount === 0) {
             document.getElementById(`availability_${product.id}`).innerHTML = 'нет';
             var buyButton = document.getElementById(item.id);
-            buyButton.removeEventListener('click', buyItem);
             buyButton.classList = ['button_disabled']
         }
         else document.getElementById(`availability_${product.id}`).innerHTML = product.amount;
@@ -387,6 +386,7 @@ function returnItem(item, n) {
 
     var headerDiv = document.getElementById("header");
     var basketContentsDiv = document.getElementById("basket-block_0").lastChild;
+    item.classList = ['button'];
 
     basket.removeProduct(product, n);
 
