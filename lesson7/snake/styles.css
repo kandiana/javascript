@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+.gameBoard {
+    width: 650px;
+    height: 650px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gameBoard > div {
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    display: block;
+    background-color: wheat;
+}
+
+.gameBoard > .snake {
+    background-color: green;
+}
+
+.gameBoard > .snakeHead {
+    background-color: blueviolet;
+}
+
+.gameBoard > .treat {
+    background-color: red;
+}
